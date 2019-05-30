@@ -1,0 +1,64 @@
+.menu-icon {background: white;
+            border-radius: 5px;
+            color: inherit;
+            border: 2px solid red;
+            cursor: pointer;
+            position: absolute;
+            width: 65px;
+            padding-left: 5px;
+            height: 70px;
+            display: flex;
+            justify-content: center;}
+
+.dropdown-content {opacity: 0;
+                   background-color: white;
+                   border: 2px solid red;
+                   border-radius: 10px;
+                   position: relative;
+                   background-color: #f1f1f1;
+                   font-family: 'Teko' , sans-serif;
+                   font-size: 22px;
+                   margin-left: 110px;
+                   margin-top: 315px;
+                   width: 275px;
+                   height: 250px;
+                   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                   transition: visibility 0s, opacity 0.2s linear;}
+
+.dropdown-content a {color: black;
+                     padding: 12px 16px;
+                     text-decoration: none;
+                     display: block;}
+
+.filter-title {background-color: red;
+               border-radius: 3px 3px 0px 0px;
+               border: 2px solid red;
+               text-align: left;
+               font-size: 28px;
+               padding: 10px;}
+
+.menu-box {position: absolute;
+           width: 90px;
+           height: 90px;
+           margin-top: -95px;
+           margin-left: 15px;
+           font-size: 42px;
+           text-align: center;
+           display: flex;
+           justify-content: center;
+           align-items: center;}
+
+.filtro {padding: 10px;}
+
+.filter-select {padding-top: 10px;
+                display: flex;
+                justify-content: initial;
+                flex-direction: column;
+                align-content: center;}
+
+.menu-box:hover .dropdown-content {display: block;
+                                   opacity: 1;
+                                   background-color: white;
+                                   border: 2px solid red;}
+
+.menu-box:hover .menu-icon {background-color: white;}

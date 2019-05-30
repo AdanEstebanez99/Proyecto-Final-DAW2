@@ -1,0 +1,38 @@
+.fondo {width: 100%;
+        height: 730px;
+        background-image: url(../../assets/imagenes/background.jpg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;}
+
+.cabecera {width: 100%;
+           height: 20%;
+           font-family: 'Russo One', sans-serif;
+           display: flex;
+           justify-content: center;
+           align-items: center;}
+
+.title {font-size: 80px;
+        margin-top: 20px;}
+
+.cuerpo {width: 90%;
+         height: 70%;
+         background-color: rgb(255, 0, 0, 0.8);
+         border: 3px solid black;
+         border-radius: 20px;
+         font-size: 36px;
+         font-family: 'Teko' , sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;}
+
+.svg-icon {width: 20%;
+           height: 20%;}
+
+.canvas-box {background-color: white;
+             width: 50%;
+             height: 60%;
+             margin-top: -50px;}
+

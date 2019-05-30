@@ -1,0 +1,73 @@
+<div class="nav-background" >
+  
+  <div class="titulo">Motorbike Home </div>
+  
+  <div *ngIf="menu === 'usuario'" class="user-box">
+    <div class="user-image-box"> <i class="material-icons" style="font-size: 56px; padding: 2px;">person</i> </div>
+    <div class="user-details-box">
+      <div class="nom-usu-box"> {{usuarioLog.nick_usu}} </div>
+      <div *ngIf="viewAdmin === false" class="fav-motos-admin-box" routerLink="/favoritas"> Motos Favoritas </div>
+      <div *ngIf="viewAdmin === true" class="fav-motos-admin-box" routerLink="/contenido"> Todas las Motos </div>
+      <div class="ajustes-box">
+        <div class="ajuste-inf-usu">
+          <i class="material-icons icon-set" style="font-size: 24px;" routerLink="/ajustes">
+            settings
+          </i>
+        </div>
+        <div class="cerrar-ses-usu">
+          <i class="material-icons icon-exit" style="font-size: 24px;" (click)="modalCerrarSes()">
+            exit_to_app
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="menu === 'admin'" class="user-box">
+    <div class="user-image-box"> <i class="material-icons" style="font-size: 56px; padding: 2px;">person</i> </div>
+    <div class="user-details-box">
+      <div class="fila1-box">
+        <div class="nom-usu-admin-box"> {{usuarioLog.nick_usu}} </div>
+        <div *ngIf="viewAdmin === false" class="fav-motos-admin-box" routerLink="/favoritas"> Motos Favoritas </div>
+        <div *ngIf="viewAdmin === true" class="fav-motos-admin-box" routerLink="/contenido"> Todas las Motos </div>
+      </div>
+      <div class="admin-mode-box">
+        <div class="motos-adm-btn" routerLink="/administrar/motos">Administrar Motos</div>
+        <div class="usu-adm-btn" routerLink="/administrar/usuarios">Administrar Usuarios</div>
+      </div>
+      <div class="ajustes-box">
+        <div class="ajuste-inf-usu">
+          <i class="material-icons icon-set" style="font-size: 24px;" routerLink="/ajustes">
+            settings
+          </i>
+        </div>
+        <div class="cerrar-ses-usu">
+          <i class="material-icons icon-exit" style="font-size: 24px;" (click)="modalCerrarSes()">
+            exit_to_app
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="menu === 'nolog'" class="user-box-no-log">
+    <div class="btn-ini-ses" routerLink="/">Iniciar Sesión</div>
+  </div>
+
+</div>
+
+<!-- MODALES -->
+<div *ngIf="modal === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">help</i>
+  ¿Estas seguro que deseas cerrar
+  <br>
+  la sesión?
+  <br>
+  <div class="modal-botones"> 
+    <button class="btn-modal"(click)="cerrarSesion()">Si</button>
+    <button class="btn-modal"(click)="cancelarCerrarSes()">Cancelar</button>
+  </div>
+</div>
+
+
+

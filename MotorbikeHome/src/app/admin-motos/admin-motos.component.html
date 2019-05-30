@@ -1,0 +1,93 @@
+<div class="banner">
+  <app-navbar></app-navbar>
+  <div class="back-box">
+    <button class="back-icon">
+      <i class="material-icons" style="font-size: 63px;" routerLink="/contenido">
+      arrow_back
+      </i>
+    </button>
+  </div>
+</div>
+<div class="fondo">
+  <div class="pagina">
+    <div class="fondo-motos">
+      <h1 class="titulo">Administrador de Motos</h1>
+
+      <div class="contenido">
+        
+        <table class="moto-table">
+          <tr class="fila">
+              <th class="campo" style="background-color: lightgrey"><strong>Eliminar</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Id</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Imagen</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Marca</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Modalidad</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Nombre</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Cilindrada</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Ciclo</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Refrigeracion</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Transmision</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Marchas</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Chasis</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Freno Delantero</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Freno <br> Trasero</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Rueda Delantera</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Rueda Trasera</strong></th>
+            <th class="campo" style="background-color: lightgrey"><strong>Peso</strong></th>
+          </tr>
+          
+          <tr *ngFor="let moto of motos" class="fila">
+            <th class="campo">
+              <i class="material-icons papelera" (click)="modalEliminar(moto.id_mot)" style="font-size: 32px;">
+              delete_forever
+              </i></th>
+            <th class="campo">{{moto.id_mot}}</th>
+            <td class="campo"><img class="imagen" src="{{moto.img_mot}}"></td>
+            <td class="campo"><span *ngFor="let marca of marcas"><i *ngIf="marca.id_mar === moto.id_mar">{{marca.nom_mar}}</i></span></td>
+            <td class="campo"><span *ngFor="let modalidad of modalidades"><i *ngIf="modalidad.id_mod === moto.id_mod">{{modalidad.nom_mod}}</i></span></td>
+            <td class="campo">{{moto.nom_mot}}</td>
+            <td class="campo"><input [(ngModel)]="moto.cil_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.cic_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.ref_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.trn_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.nmar_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.cha_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.frd_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.frt_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.rud_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.rut_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+            <td class="campo"><input [(ngModel)]="moto.pes_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
+          </tr>
+
+        </table>
+
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MODALES -->
+<div *ngIf="modal === true" class="modal-1">
+  ¿Estas seguro que deseas eliminar
+  <br>
+  esta moto?
+  <br>
+  <div class="modal-botones"> 
+    <button class="btn-modal"(click)="eliminarMoto()">Si</button>
+    <button class="btn-modal"(click)="cancelar()">Cancelar</button>
+  </div>
+</div>
+
+<div *ngIf="modalNulo === true" class="modal-1">
+  No puedes dejar este campo
+  <br>
+  vacio!
+  <br>
+  <div class="modal-botones"> 
+    <button class="btn-modal"(click)="cancelar()">Ok</button>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.fondo {height: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: transparent;
+        display:flex;
+        justify-content: center;}
+
+.caja {width: 400px;
+       background-color: white;
+       border-radius: 5px;
+       border: 2px solid black;
+       text-align: center;
+       display: flex;
+       justify-content: center;
+       align-items: center;}
+
+.breadcrumb {background-color: white;
+             border-radius: 5px;
+             margin-left: 1px;
+             width: 100%;
+             height: 100%;
+             margin-top: 15px;
+             font-family: 'Teko' , sans-serif;
+             line-height: 20px;
+             font-size: 22px;}
+
+.enlace {text-decoration: none;
+         color: red;}
+
+
+ @media screen and (max-width: 1180px) {
+        
+        .breadcrumb {line-height: 16px;
+                     font-size: 18px;
+                     width: 240px;}
+
+        .caja {width: 240px;}
+                                     
+}
+         
+         
+@media screen and (max-width: 890px) {
+                 
+        .breadcrumb {line-height: 12px;
+                     font-size: 14px;
+                     width: 240px;}
+
+        .caja {width: 240px;}
+                                     
+}

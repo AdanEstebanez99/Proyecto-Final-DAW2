@@ -1,0 +1,103 @@
+<div class="registro-fondo">
+  <div class="box-1">
+    <div class="titulo"><span class="titulo-text">MOTORBIKE HOME</span></div>
+    <div class="formulario">
+      <form name="form" #f="ngForm" class="form-content" (ngSubmit)="f.form.valid && registerUser()" novalidate>
+        <span class="form-title">Formulario de Registro</span>
+        <div class="box-2">
+
+          <br>
+          <label class="campo">Nombre:</label>
+          <br>
+          <input class="input-form" type="text" name="nom_usu" required maxlength="50" minlength="2" autofocus placeholder="Introduce tu nombre" [(ngModel)]="model.nom_usu" #nom_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nom_usu.invalid }">
+          <br>
+          <div *ngIf="f.submitted && nom_usu.invalid">
+            <div class="validacion" *ngIf="nom_usu.errors?.required">Este campo es obligatorio</div>
+            <div class="validacion" *ngIf="nom_usu.errors?.minlength">Debe contener al menos 2 caracteres</div>
+          </div>
+          <br>
+          <label class="campo">Apellidos:</label>
+          <br>
+          <input class="input-form" type="text" name="ape_usu" required maxlength="50" minlength="2" placeholder="Introduce tus apellidos"[(ngModel)]="model.ape_usu" #ape_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ape_usu.invalid }">
+          <br>
+          <div *ngIf="f.submitted && ape_usu.invalid">
+            <div class="validacion" *ngIf="ape_usu.errors?.required">Este campo es obligatorio</div>
+            <div class="validacion" *ngIf="ape_usu.errors?.minlength">Debe contener al menos 2 caracteres</div>
+          </div>
+          <br>
+          <label class="campo">Correo Electronico:</label>
+          <br>
+          <input class="input-form" type="text" name="cor_usu" placeholder="Introduce tu e-mail"[(ngModel)]="model.cor_usu" #cor_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cor_usu.invalid }" required email maxlength="50">  
+          <br>
+          <div *ngIf="f.submitted && cor_usu.invalid">
+            <div class="validacion" *ngIf="cor_usu.errors?.required">Este campo es obligatorio</div>
+            <div class="validacion" *ngIf="cor_usu.errors?.email">Formato de email incorrecto</div>
+          </div>
+
+        </div>
+
+        <div class="box-3">
+          <br>
+          <label class="campo">Nombre de usuario:</label>
+          <br>
+          <input class="input-form" type="text" name="nick_usu" required maxlength="25" minlength="4" placeholder="Nickname, apodo..."[(ngModel)]="model.nick_usu" #nick_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nick_usu.invalid }">
+          <br>
+          <div *ngIf="f.submitted && nick_usu.invalid">
+            <div class="validacion" *ngIf="nick_usu.errors?.required">Este campo es obligatorio</div>
+            <div class="validacion" *ngIf="nick_usu.errors?.minlength">Debe contener al menos 4 caracteres</div>
+          </div>
+          <br>
+          <label class="campo">Contraseña:</label>
+          <br>
+          <input type="password" class="input-form" name="con_usu" required maxlength="25" minlength="5" placeholder="Introduce una contraseña"[(ngModel)]="model.con_usu" #con_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && con_usu.invalid }">  
+          <br>
+          <div *ngIf="f.submitted && con_usu.invalid">
+            <div class="validacion" *ngIf="con_usu.errors?.required">Este campo es obligatorio</div>
+            <div class="validacion" *ngIf="con_usu.errors?.minlength">Debe contener al menos 5 caracteres</div>
+          </div>
+          <br>
+          <label class="campo">Color Favorito</label>
+          <br>
+          <select class="input-form" id="col_usu" name="col_usu" required [(ngModel)]="model.col_usu" #col_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && col_usu.invalid }">
+            <option value="" disabled="true" [selected]="!model.col_usu">Elije un color</option>
+            <option ng-value="prueba">prueba</option>
+            <option ng-value="prueba2">prueba</option>
+            <option ng-value="prueba4">prueba</option>
+          </select>
+          <br>
+          <div *ngIf="f.submitted && col_usu.invalid">
+            <div class="validacion" *ngIf="col_usu.errors?.required">Este campo es obligatorio</div>
+          </div>
+        </div>
+        <div class="botones">
+          <div class="box-4">
+            <button routerLink="/" class="atras">Volver a inicio</button>
+          </div>
+          <div class="box-5">
+            <input type="submit" name="enviar" value="Enviar Formulario" class="enviar">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="modal === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">report_problem</i>
+  El usuario introducido ya esta registrado.
+  <br>
+  Por favor elige otro nombre diferente.
+  <br>
+  <br>
+  <button class="ok"(click)="ocultarModal()">Ok</button>
+</div>
+
+
+<div *ngIf="modalCorrecto === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px; color: green;">done_outline</i>
+  Usuario registrado correctamente!
+  <br>
+  <br>
+  <button class="ok"(click)="ocultarModal()">Ok</button>
+</div>

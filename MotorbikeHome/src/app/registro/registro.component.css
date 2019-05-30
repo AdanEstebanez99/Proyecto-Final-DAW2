@@ -1,0 +1,201 @@
+.registro-fondo {background-image: url(../../assets/imagenes/background.jpg);
+                 width: 100%;
+                 height: 820px;
+                 display: flex;
+                 justify-content: center;}
+
+.box-1 {background-color: transparent;
+        height: 730px;
+        width: 80%;}
+
+.titulo {background-color: rgb(240, 61, 61);
+        border: 1px solid rgb(250, 242, 242);;
+        border-radius: 9px 9px 0px 0px;
+        font-family: 'Russo One', sans-serif;
+        text-shadow: -1.5px 0 6px white, 0 1.5px 6px white, 1.5px 0 6px white, 0 -1.5px 6px white;
+        width: 100%;
+        height: 125px;
+        margin-top: 20px;
+        font-size: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+
+.titulo-text {animation: bounceIn 2s;}
+
+.formulario {background-image: url("../../assets/imagenes/registro-background.jpg");
+             background-repeat: no-repeat;
+             background-size: cover;
+             border: 1px solid rgb(250, 242, 242);
+             border-radius: 0px 0px 9px 9px;
+             width: 100%;
+             height: 80.2%;
+             display: flex;
+             justify-content: center;
+             align-items: center;}
+
+.form-content {background-color: white;
+               width: 80%;
+               height: 90%;
+               border: 2px solid white;
+               border-radius: 10px 10px 10px 10px;}
+
+.form-title {background-color: rgb(240, 61, 61);
+             border: 2px solid white;
+             border-radius: 10px 10px 10px 10px;
+             text-align: center;
+             font-family: 'Teko' , sans-serif;
+             font-size: 34px;
+             display: flex;
+             align-items: center;
+             justify-content: center;}
+
+.box-2 {background-color: lightgrey;
+        border: 2px solid white;
+        font-family: 'Teko' , sans-serif;
+        font-size: 22px;
+        line-height: 22px;
+        border-radius: 10px;
+        width: 50%;
+        height: 77%;
+        padding: 15px;
+        position: relative;
+        float: left;
+        padding-left: 40px;
+        padding-top: 20px;
+        animation: bounceIn 2s;}
+
+.box-3 {background-color: lightgrey;
+        border: 2px solid white;
+        border-radius: 10px;
+        font-family: 'Teko' , sans-serif;
+        font-size: 22px;
+        line-height: 22px;
+        width: 50%;
+        height: 77%;
+        padding: 15px;
+        position: relative;
+        float: right;
+        padding-left: 40px;
+        padding-top: 20px;
+        animation: bounceIn 2s;}
+
+.botones {background-color: white;
+          border-radius: 10px 10px 10px 10px;
+          clear: both;
+          font-family: 'Teko' , sans-serif;
+          font-size: 23px;
+          width: 100%;
+          height: 13.5%;
+          padding: 10px;}
+
+.box-4 {background-color: white;
+        border-radius: 10px 10px 10px 10px;
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+
+.box-5 {background-color: white;
+        border-radius: 10px 10px 10px 10px;
+        position: relative;
+        float: right;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;}
+
+.atras {background-color: lightgrey;
+        border: 2px solid grey;
+        border-radius: 5px;}
+
+.enviar {background-color: lightgrey;
+         border: 2px solid grey;
+         border-radius: 5px;}
+
+.input-form {background-color: white;
+             border: 1.5px solid grey;
+             border-radius: 5px;}
+
+.validacion {color: red;}
+
+.modal-1 {background-color: lightgrey;
+        border: 2px solid black;
+        color: red;
+        font-family: 'Teko' , sans-serif;
+        line-height: 18px;
+        font-size: 23px;
+        border-radius: 10px;
+        position: absolute;
+        width: 420px;
+        height: 260px;
+        font-size: 22px;
+        text-align: center;
+        top: 160px;
+        left: 36.1%;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;}
+    
+.ok {background-color: white;
+   border: 2px solid grey;
+   border-radius: 5px;
+   height: 30px;}
+
+
+@keyframes bounceIn {
+        0% {
+          transform: scale(0.1);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+        }
+}
+
+
+
+@media screen and (max-width: 880px) {
+        
+        .titulo {font-size: 46px;}
+
+        .form-title {font-size: 28px;}
+
+        .box-2 {font-size: 17px;
+                line-height: 19px;}
+
+        .box-3 {font-size: 17px;
+                line-height: 19px;}
+
+        .botones {font-size: 18px;}
+                 
+}
+
+
+@media screen and (max-width: 670px) {
+        
+        .titulo {font-size: 46px;
+                 text-align: center;}
+
+        .form-title {font-size: 24px;}
+
+        .box-2 {font-size: 17px;
+                line-height: 19px;
+                padding-left: 3px;}
+
+        .box-3 {font-size: 17px;
+                line-height: 19px;
+                padding-left: 3px;}
+
+        .botones {font-size: 18px;}
+}

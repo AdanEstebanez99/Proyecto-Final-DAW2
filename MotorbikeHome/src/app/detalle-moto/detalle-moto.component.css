@@ -1,0 +1,254 @@
+.banner {background-image: url(../../assets/imagenes/background-general.jpg);
+         background-size: cover;
+         background-position: center;
+         border: 2px solid black;}
+
+.fondo {width: 100%;
+        background-color: white;
+        background-image: url(../../assets/imagenes/background-fondo.jpg);
+        font-family: 'Teko' , sans-serif;
+        display: flex;
+        justify-content: center;}
+
+.pagina {width: 90%;
+         height: 100%;
+         margin-top: 15px;
+         background-color: rgba(128, 128, 128, 0.95);
+         border-radius: 20px;
+         display: flex;
+         align-items: center;
+         flex-direction: column;}
+
+.image-box {background-color: white;
+            width: 55%;
+            height: 510%;
+            margin-top: 15px;
+            border: 3px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;}
+
+.imagen {width: 100%;
+         height: 100%;
+         border-radius: 10px;}
+
+.nom-moto {font-size: 46px;
+           text-shadow: -1.6px 0 5px white, 0 1.6px 5px white, 1.6px 0 5px white, 0 -1.6px 5px white;}
+
+.mar-moto {font-size: 24px;
+           text-shadow: -1.6px 0 5px rgb(255, 0, 0), 0 1.6px 5px rgb(255, 0, 0), 1.6px 0 5px rgb(255, 0, 0), 0 -1.6px 5px rgb(255, 0, 0);}
+           
+
+.info-moto {background-color: white;
+            border-radius: 10px 10px 10px 10px;
+            border: 2px solid black;
+            width: 45%;
+            height: 47%;
+            margin-top: 10px;}
+
+.me-gusta {background-color: transparent;
+           height: 30px;
+           min-width: 100px;
+           position: absolute;
+           text-align: center;
+           display: flex;
+           align-items: center;}
+
+.mg-fav-moto {background-color: transparent;
+              width: 45%;
+              height: 4%;
+              margin-top: 10px;
+              display: flex;
+              flex-direction: row; }
+
+.mg-box {background-color: transparent;
+         width: 50%;
+         display: flex;
+         justify-content: flex-start;}
+
+.fav-box {background-color: transparent;
+          width: 50%;
+          display: flex;
+          justify-content: flex-end;}
+
+.fav {border: 2px solid black;
+      border-radius: 10px;
+      background-color: white;
+      font-size: 19px;
+      line-height: 20px;}
+
+.fav-activ {border: 2px solid black;
+            border-radius: 10px;
+            background-color: white;
+            font-size: 19px;
+            line-height: 20px;}
+
+.fav-activ:hover {background-color: red;}
+
+.inf-titulo {background-color: red;
+             border: 2px solid black;
+             border-radius: 5px 5px 0px 0px;
+             width: 100%;
+             height: 9%;
+             text-align: center;
+             font-size: 26px;
+             display: flex;
+             justify-content: center;
+             align-items: center;}
+
+.back-box {background-color: transparent;
+           position: absolute;
+           width: 90px;
+           height: 90px;
+           margin-top: -90px;
+           margin-left: 15px;
+           font-size: 42px;
+           text-align: center;
+           display: flex;
+           justify-content: center;
+           align-items: center;}
+                    
+.back-icon {background-color: white;
+            border: 2px solid red;
+            border-radius: 5px;
+            color: inherit;
+            cursor: pointer;
+            position: absolute;
+            width: 70px;
+            text-align: center;
+            padding-left: 2px;
+            height: 70px;}
+
+.informacion {line-height: 12px;
+              font-size: 19px;}
+
+.info-detalle {padding: 20px;}
+
+.tit-comentario {text-shadow: -1.6px 0 5px white, 0 1.6px 5px white, 1.6px 0 5px white, 0 -1.6px 5px white;}
+
+.comentarios {background-color: white;
+              border: 2px solid black;
+              border-radius: 10px;
+              width: 70%;
+              height: 500px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;}
+
+.detalle-comentario {background-color: white;
+                     border-radius: 5px 0px 0px 5px;
+                      width: 95%;
+                      height: 110px;
+                      margin: 10px;}
+
+.inf-usu {width: 13%;
+          height: 100%;
+          background-color: grey;
+          border: 10px 10px 10px 10px;
+          padding: 5px;
+          float: left;}
+        
+.logo-usu {background-color: white;
+           border: 10px 10px 10px 10px;
+           border: 1px solid grey;
+           width: 100%;
+           height: 75%;
+           display: flex;
+           justify-content: center;
+           align-items: center;}
+
+.nick-usu {background-color: lightgrey;
+           border: 1px solid grey;
+           border: 10px 10px 10px 10px;
+           font-size: 16px;
+           color: black;
+           width: 100%;
+           height: 25%;
+           display: flex;
+           justify-content: center;}
+
+.cont-comentario {background-color: grey;
+                  font-size: 19px;
+                  line-height: 19px;
+                  float: right;
+                  width: 87%;
+                  height: 100%;
+                  padding: 5px;}
+
+.text-comentario {background-color: white;
+                  width: 100%;
+                  height: 100%;
+                  padding: 3px;
+                  text-align: justify;
+                  word-wrap: break-word;}
+
+.comentarios-scroll {background-color: white;
+                     width: 98%;
+                     margin-top: 7px;
+                     margin-bottom: 5px;
+                     border-radius: 10px;}
+
+.inserta-comentario {background-color: white;
+                     border: 2px solid black;
+                     border-radius: 10px;
+                     width: 42%;
+                     height: 245px;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;}
+
+.inser-comen-body {background-color: white;
+                   width: 98%;
+                   height: 95%;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;}
+
+.coment-title {font-size: 26px;
+               padding-top: 10px;}
+
+.formulario-comentario {background-color: white;
+                        padding: 1px;
+                        width: 98%;
+                        height: 98%;
+                        font-size: 19px;
+                        line-height: 17px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;}
+
+.fav {display: flex;
+      justify-content: center;
+      align-items: center;}
+
+.validacion {color: red;}
+
+.enviar-boton {border: 1px solid black;
+               border-radius: 5px;}
+
+.input-coment {width: 100%;
+               background-color: white;
+               display: flex;
+               justify-content: center;}
+
+.text-coment {width: 87%;
+              margin: 5px;
+              height: 135px;
+              background-color: white;
+              border-radius: 5px;
+              text-align: center;
+              word-wrap: break-word;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: center;}
+
+.video {margin-top: 50px;
+        margin-bottom: 50px;}
+
+.yt-video {border: 2px solid black;
+            border-radius: 5px;}
+
+

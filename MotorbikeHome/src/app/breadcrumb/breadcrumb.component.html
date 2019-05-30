@@ -1,0 +1,22 @@
+<div class="fondo">
+  <div class="caja">
+
+    <ol class="breadcrumb">
+        
+      <ng-container *ngIf="count != null">
+        <li class="breadcrumb-item"><i class="material-icons">home</i></li>
+      </ng-container>
+        
+      <ng-container *ngFor="let breadLink of breadcrumbList.slice(1)">
+        <li class="breadcrumb-item">
+          <a *ngIf="breadLink != breadcrumbList[count-1]" routerLink="/{{breadLink}}" class="enlace">{{breadLink}}</a>
+          <a *ngIf="breadLink == breadcrumbList[count-1]">
+            <a *ngIf="breadLink === 'detalleMoto'">{{moto.nom_mot}}</a>
+            <a *ngIf="breadLink !== 'detalleMoto'">{{breadLink}}</a>
+          </a>
+        </li>
+      </ng-container>
+    </ol>
+      
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="banner">
+  <app-navbar></app-navbar>
+  <app-menu (filtroEvent)="receiveFiltro($event)"></app-menu>
+  <app-breadcrumb></app-breadcrumb>
+</div>
+<div class="fondo">
+  <div class="pagina">
+    <div class="fondo-motos">
+      <div *ngFor="let moto of motos | motoTextFilter:textoBusqueda | paginate: {itemsPerPage: 9, currentPage: pagActual}" class="carta" routerLink="/contenido/{{moto.id_mot}}">
+        <div class="img-moto">
+          <img class="imagen" src="{{moto.img_mot}}">
+        </div>
+        <div class="nom-moto">
+          {{moto.nom_mot}}
+        </div>
+      </div>
+    </div>
+
+    <div class="paginacion">
+      <span class="pagination-spn"><pagination-controls class="ngx-paginacion" (pageChange)="pagActual = $event" maxSize="5" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls></span>
+    </div>
+
+  </div>
+</div>

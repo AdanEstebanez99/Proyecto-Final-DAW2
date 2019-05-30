@@ -1,0 +1,74 @@
+<div class="banner">
+  <app-navbar></app-navbar>
+  <div class="back-box">
+    <button class="back-icon">
+      <i class="material-icons" style="font-size: 63px;" routerLink="/contenido">
+      arrow_back
+      </i>
+    </button>
+  </div>
+  <app-breadcrumb></app-breadcrumb>
+</div>
+
+<div class="fondo">
+  <div class="pagina">
+   <div class="contenido">
+     <div class="formulario">
+
+      <h1 class="title-aju">Ajustes de Usuario</h1>
+       
+      <div class="table">
+        <div class="cabecera">
+            <div class="img-usu">
+                <i class="material-icons" style="font-size: 100px; padding: 7px;">person</i>
+            </div>
+            <div class="nick-usu">
+              <h1>{{infoUsu.nick_usu}}</h1>
+            </div>
+        </div>
+        <div class="cuerpo">
+          <div class="box1">
+            <div class="nom-usu">
+              <h5><input [(ngModel)]="infoUsu.nom_usu" (change)="actualizarUsu(infoUsu)" type="text" class="input-label"/></h5>
+            </div>
+            <div class="ape-usu">
+              <h5><input [(ngModel)]="infoUsu.ape_usu" (change)="actualizarUsu(infoUsu)" type="text" class="input-label"/></h5>
+            </div>
+          </div>
+          <div class="box2">
+            <div class="email-usu">
+              <h5>{{usuarioLog.cor_usu}}</h5>
+            </div>
+            <div class="color-fav-usu">
+              <h5>
+                <select [(ngModel)]="infoUsu.col_usu" (change)="actualizarUsu(usuarioLog)" class="input-label">
+                  <option value="" disabled="true" [selected]="!infoUsu.col_usu">{{infoUsu.col_usu}}</option>
+                  <option ng-value="prueba">prueba</option>
+                  <option ng-value="prueba2">prueba2</option>
+                  <option ng-value="prueba4">prueba4</option>
+                </select>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video">
+        <iframe class="yt-video" width="560" height="315" src="https://www.youtube.com/embed/9r0Tam0yLik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+
+
+<!-- MODALES -->
+<div *ngIf="modalNo === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">report_problem</i>
+  No puedes dejar ningun
+  <br>
+  campo vacio!
+  <br>
+  <div class="modal-botones"> 
+    <button class="btn-modal"(click)="cancelar()">Ok</button>
+  </div>
+</div>

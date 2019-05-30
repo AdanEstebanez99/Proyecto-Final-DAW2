@@ -1,0 +1,131 @@
+<div class="banner">
+    <app-navbar></app-navbar>
+    <div class="back-box">
+      <button class="back-icon">
+        <i class="material-icons" style="font-size: 63px;" routerLink="/favoritas">
+        arrow_back
+        </i>
+      </button>
+    </div>
+    <app-breadcrumb></app-breadcrumb>
+  </div>
+  
+  <div class="fondo">
+    <div class="pagina">
+      <div class="nom-moto">{{moto.nom_mot}}</div>
+      <div class="mar-moto">
+        <div *ngFor="let marca of marcas">
+          <div *ngIf="marca.id_mar === moto.id_mar">
+            <a>{{marca.nom_mar | uppercase}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="image-box">
+        <img class="imagen" src="{{moto.img_mot}}">
+  
+      </div>
+      <div class="mg-fav-moto">
+  
+        <div class="mg-box">
+        </div>
+  
+        <div class="fav-box">
+          <button *ngIf="(logueado === true) && (motoFav === false)" class="fav-activ" (click)="addMotoFavorita()"><i class="material-icons" style="font-size: 16px; padding: 2px;">grade</i> Añadir a favoritos</button>
+          <button *ngIf="(logueado === true) && (motoFav === true)" class="fav-activ" (click)="eliminarMotoFavorita()"><i class="material-icons" style="font-size: 16px; padding: 2px;">cancel</i> Eliminar de favoritos</button>
+          <button *ngIf="(logueado === false)" class="fav" disabled><i class="material-icons" style="font-size: 16px; padding: 2px;">star</i> Añadir a favoritos</button>
+        </div>
+  
+      </div>
+      <br>
+      <div class="info-moto">
+        <div class="inf-titulo">Ficha Tecnica</div>
+        <div class="info-detalle">
+          <p class="informacion"><strong>MOTOR:</strong></p>
+          <p class="informacion">Cilindrada Exacta: {{moto.cil_mot}}</p>
+          <p class="informacion">Ciclo: {{moto.cic_mot}}</p>
+          <p class="informacion">Refrigeración: {{moto.ref_mot}}</p>
+          <br>
+          <p class="informacion"><strong>TRANSMISION:</strong></p>
+          <p class="informacion">Transmision Secundaria: {{moto.trn_mot}}</p>
+          <p class="informacion">Numero de Marchas: {{moto.nmar_mot}}</p>
+          <br>
+          <p class="informacion"><strong>CICLO:</strong></p>
+          <p class="informacion">Tipo Chasis: {{moto.cha_mot}}</p>
+          <p class="informacion">Freno Delantero: {{moto.frd_mot}}</p>
+          <p class="informacion">Freno Trasero: {{moto.frt_mot}}</p>
+          <p class="informacion">Rueda Delantera: {{moto.rud_mot}} "</p>
+          <p class="informacion">Rueda Trasera: {{moto.rut_mot}} "</p>
+          <p class="informacion">Peso: {{moto.pes_mot}} </p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="tit-comentario"><h2>Comentarios:</h2></div>
+      <br>
+      <div class="comentarios">
+        <div class="comentarios-scroll">
+  
+  
+          <div *ngFor="let comentario of comentarios" class="detalle-comentario">
+            <div class="inf-usu">
+              <div class="logo-usu"><i class="material-icons" style="font-size: 61px; padding: 2px;">person</i></div>
+              <div *ngFor="let usuario of usuComent">
+                <div class="nick-usu" *ngIf="usuario.id_usu === comentario.id_usu ">{{usuario.nick_usu}}</div>
+              </div>
+            </div>
+        
+            <div class="cont-comentario">
+              <div class="text-comentario">
+                {{comentario.tex_com}}
+              </div>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+      <br>
+      <br>
+  
+      <div class="inserta-comentario">
+        <div class="inser-comen-body">
+          <form name="form" #f="ngForm" class="formulario-comentario" (ngSubmit)="f.form.valid && sendComentario()" novalidate>
+            <label class="coment-title">Introduce el comentario aqui:</label>
+            <br>
+            <div class="input-coment">
+            <div *ngIf="(logueado === true)" class="text-coment">
+              <textarea name="tex" class="text-coment" maxlength="199" minlength="1" required [(ngModel)]="registrarComentario.tex_com" #tex="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tex.invalid }"> </textarea>
+              <div *ngIf="f.submitted && tex.invalid">
+                  <div class="validacion" *ngIf="tex.errors?.required">No se puede enviar un comentario vacio!</div>
+                  <div class="validacion" *ngIf="tex.errors?.maxlength">No se pueden introducir mas de 200 caracteres</div>
+              </div>
+            </div>
+            </div>
+            <div class="input-coment">
+            <textarea *ngIf="(logueado === false)" class="text-coment" disabled type="text"> </textarea>
+            </div>
+            <br>
+            <input *ngIf="(logueado === true)" name="enviar" class="enviar-boton" type="submit" value="Comentar">
+            <input *ngIf="(logueado === false)" disabled class="enviar-boton" type="submit" value="Comentar">
+          </form>
+        </div>
+      </div>
+  
+      <br>
+      <br>
+
+      <div class="video" *ngIf="moto.id_mar == 2">
+        <iframe class="yt-video" width="560" height="315" src="https://www.youtube.com/embed/COcI2Kj6tUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" *ngIf="moto.id_mar == 3">
+        <iframe class="yt-video" width="560" height="315" src="https://www.youtube.com/embed/uzOQPXiL6Eg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" *ngIf="moto.id_mar == 1">
+        <iframe  class="yt-video" width="560" height="315" src="https://www.youtube.com/embed/zMWwdN3-mX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" *ngIf="moto.id_mar == 4">
+        <iframe class="yt-video" width="560" height="315" src="https://www.youtube.com/embed/RBL6BYP8kbA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+    </div>
+  </div>

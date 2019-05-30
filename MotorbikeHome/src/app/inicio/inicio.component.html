@@ -1,0 +1,76 @@
+<div class="inicio-fondo" (click)="ocultarModal()">
+
+  <div class="box-1">
+    <div class="titulo"><span class="titulo-text">MOTORBIKE HOME</span></div>
+      
+    <div class="box-2">
+
+      <div class="box-3">
+
+        <div class="caja-iniSes">
+          <div class="iniSes-titulo">Inicio de Sesión</div>
+            <div class="formulario">
+               <form name="form" #f="ngForm" class="iniSes" (ngSubmit)="f.form.valid && getUsuLog()" novalidate>
+                <label class="campo">Usuario:</label>
+                <br>
+                <input class="input" type="text" name="usu" [(ngModel)]="usuario" required #usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usu.invalid }" autocomplete="off">
+                <br>
+                <div *ngIf="f.submitted && usu.invalid">
+                  <div class="validacion" *ngIf="usu.errors?.required">Debes introducir un usuario</div>
+                </div>
+                <br>
+                <label class="campo">Contraseña:</label>
+                <br>
+                <input class="input" type="password" name="con" [(ngModel)]="contrasena" #con="ngModel" [ngClass]="{ 'is-invalid': f.submitted && con.invalid }" required>
+                <br>
+                <div *ngIf="f.submitted && con.invalid">
+                  <div class="validacion" *ngIf="con.errors?.required">Debes introducir una contraseña</div>
+                </div>
+                <br>
+                <input type="submit" class="enviar">
+                <br>
+                <br>
+                <span>¿No estas registrado aun? <a class="enlace" routerLink="/registro">Registrate!</a></span>
+                <br>
+              </form>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="box-4">
+
+        <div class="caja-info">
+          <div class="info-titulo">Información</div>
+          <div class="info">
+            Motorbike Home es una web donde enontraras información sobre una gran varieadad de motos y podrás comentar lo que quieras con otros usuarios y crear tu lista de motos favoritas.
+            <br>
+            <br>
+            Web realizada por Adán Estebanez Villarrubia para el proyecto final de 2º DAW.
+            <br>
+            <br>
+            <div class="accs-noLog">
+              <a class="enlace" routerLink="/contenido">Accede sin iniciar sesión ahora!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODALES -->
+
+<div *ngIf="modal === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">report_problem</i>
+  <div>
+    Usuario o contraseña no coinciden.
+    <br>
+    Comporueba si esta registrado,
+    <br>
+    o intentelo de nuevo
+  </div>
+  <br>
+  <button class="ok"(click)="ocultarModal()">Ok</button>
+</div>

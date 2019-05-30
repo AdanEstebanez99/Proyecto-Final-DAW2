@@ -1,0 +1,26 @@
+<div class="menu-box">
+  <button class="menu-icon">
+    <i class="material-icons" style="font-size: 64px;">
+    menu
+    </i>
+  </button>
+  <div class="dropdown-content">
+    <div class="filter-title">Filtro:</div>
+    <form class="filtro" (change)="aplicarFiltro()">
+      <input type="text" [(ngModel)]="model.nom_mot" name="nombre" placeholder="Buscar nombre:">
+      <br>
+      <div class="filter-select">
+        <select name="marca" [(ngModel)]="model.id_mar" placeholder="Marca:">
+          <option value=0 [selected]="">Filtro por marca</option>
+          <option *ngFor="let marca of marcas" [ngValue]="marca.id_mar">{{marca.nom_mar}}</option>
+        </select>
+        <br>
+        <select name="modalidad" [(ngModel)]="model.id_mod" placeholder="Modalidad:">
+          <option value=0 [selected]="">Filtro por modalidad</option>
+          <option *ngFor="let modalidad of modalidades" [ngValue]="modalidad.id_mod">{{modalidad.nom_mod}}</option>
+        </select>
+      </div>
+      <br>
+    </form>
+  </div>
+</div>
