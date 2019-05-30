@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css'],
+  styleUrls: ['./registro.component.scss'],
   providers: [Md5]
 })
 export class RegistroComponent implements OnInit {
@@ -41,6 +41,8 @@ export class RegistroComponent implements OnInit {
     password = md5.appendStr(this.model.con_usu).end();
 
     this.model.con_usu = password.toString();
+
+    this.model.col_usu = 'prueba';
 
     this.apiService.registerUser(this.model).subscribe(
       res => {

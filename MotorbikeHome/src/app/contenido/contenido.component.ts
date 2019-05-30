@@ -6,7 +6,7 @@ import { LoginService } from '../shared/login.service';
 @Component({
   selector: 'app-contenido',
   templateUrl: './contenido.component.html',
-  styleUrls: ['./contenido.component.css']
+  styleUrls: ['./contenido.component.scss']
 })
 export class ContenidoComponent implements OnInit {
 

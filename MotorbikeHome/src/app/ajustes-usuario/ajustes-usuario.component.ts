@@ -7,7 +7,7 @@ import { Usuario } from '../model/usuario';
 @Component({
   selector: 'app-ajustes-usuario',
   templateUrl: './ajustes-usuario.component.html',
-  styleUrls: ['./ajustes-usuario.component.css']
+  styleUrls: ['./ajustes-usuario.component.scss']
 })
 export class AjustesUsuarioComponent implements OnInit {
 

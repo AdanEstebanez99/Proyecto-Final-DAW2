@@ -7,7 +7,7 @@ import { Modalidades } from '../model/modalidades';
 @Component({
   selector: 'app-admin-motos',
   templateUrl: './admin-motos.component.html',
-  styleUrls: ['./admin-motos.component.css']
+  styleUrls: ['./admin-motos.component.scss']
 })
 export class AdminMotosComponent implements OnInit {
 

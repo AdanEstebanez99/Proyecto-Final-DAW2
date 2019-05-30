@@ -23,11 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "src/custom-theme.scss"
-              },
-              "src/styles.css"
+              "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths":[
+                "../node_modules/bootstrap/scss"
+              ]
+            },
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -141,5 +143,10 @@
       }
     }
   },
-  "defaultProject": "MotorbikeHome"
+  "defaultProject": "MotorbikeHome",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

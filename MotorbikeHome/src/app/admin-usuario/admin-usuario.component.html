@@ -23,7 +23,6 @@
             <th class="campo" style="background-color: lightgrey"><strong>Nombre</strong></th>
             <th class="campo" style="background-color: lightgrey"><strong>Apellidos</strong></th>
             <th class="campo" style="background-color: lightgrey"><strong>Correo</strong></th>
-            <th class="campo" style="background-color: lightgrey"><strong>Color</strong></th>
             <th class="campo" style="background-color: lightgrey"><strong>Rol</strong></th>
           </tr>
           <tr *ngFor="let usuario of usuarios" class="fila">
@@ -38,7 +37,6 @@
             <td class="campo">{{usuario.nom_usu}}</td>
             <td class="campo">{{usuario.ape_usu}}</td>
             <td class="campo">{{usuario.cor_usu}}</td>
-            <td class="campo">{{usuario.col_usu}}</td>
             <td class="campo"><input [(ngModel)]="usuario.rol_usu" (change)="actualizarRolUsu(usuario)" type="text" class="input-label"/></td>
           </tr>
         </table>
@@ -63,6 +61,7 @@
 
 
 <div *ngIf="modalNo === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">report_problem</i>
   No puedes eliminar tu 
   <br>
   propio usuario
@@ -74,6 +73,7 @@
 
 
 <div *ngIf="modalRolNo === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">report_problem</i>
   Rol no valido, introduce
   <br>
   1(Admin) o 0(Normal)
@@ -85,6 +85,7 @@
 
 
 <div *ngIf="modalUsuNo === true" class="modal-1">
+  <i class="material-icons" style="font-size: 60px; padding: 28px;">report_problem</i>
   No puedes modificar el
   <br>
   Rol de tu usuario

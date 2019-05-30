@@ -10,7 +10,7 @@ import { Comentario } from '../model/comentario';
 @Component({
   selector: 'app-motos-favoritas-detalle',
   templateUrl: './motos-favoritas-detalle.component.html',
-  styleUrls: ['./motos-favoritas-detalle.component.css']
+  styleUrls: ['./motos-favoritas-detalle.component.scss']
 })
 export class MotosFavoritasDetalleComponent implements OnInit {
 

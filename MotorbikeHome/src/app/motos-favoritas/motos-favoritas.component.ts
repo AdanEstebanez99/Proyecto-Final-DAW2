@@ -7,7 +7,7 @@ import { LoginService } from '../shared/login.service';
 @Component({
   selector: 'app-motos-favoritas',
   templateUrl: './motos-favoritas.component.html',
-  styleUrls: ['./motos-favoritas.component.css']
+  styleUrls: ['./motos-favoritas.component.scss']
 })
 export class MotosFavoritasComponent implements OnInit {
 
