@@ -1,23 +1,79 @@
+$title-font: 'Russo One', sans-serif;
+$body-font: 'Teko' , sans-serif;
+$red-color: red;
+$red-text-shadow: -1.6px 0 red, 0 1.6px red, 1.6px 0 red, 0 -1.6px red;
+$white-text-shadow: -1.6px 0 white, 0 1.6px white, 1.6px 0 white, 0 -1.6px white;
+
+@mixin flex-center() {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+
+@mixin flex-center-column() {
+       @include flex-center();
+       flex-direction: column;
+}
+
+@mixin flex-column() {
+       display: flex;
+       flex-direction: column;
+}
+
+@mixin styles-1() {
+       background-color: rgba(255, 255, 255, 0.65);
+       border: 1px solid white;
+       border-radius: 5px;
+}
+
+@mixin hm-73-3() {
+       height: 73%;
+       margin: 3%;
+}
+
+@mixin hw-90() {
+       width: 90px;
+       height: 90px;
+}
+
+@mixin margin-15() {
+       margin-top: 15px;
+       margin-left: 15px;
+       margin-right: 15px;
+}
+
+@mixin admin-btn-mq-nv1() {
+       line-height: 10px;
+       font-size: 13px;
+}
+
+@mixin admin-btn-mq-nv2() {
+       line-height: 9px;
+       font-size: 11px;
+}
+
+@mixin admin-btn-mq-nv3() {
+       line-height: 9px;
+       font-size: 10px;
+}
+
 .nav-background {background-color: transparent;
                  width: 100%;
                  height: 120px;}
             
-.menu-box {background-color: transparent;
+.menu-box {@include hw-90();
+           background-color: transparent;
            position: absolute;
-           width: 90px;
-           height: 90px;
            margin-top: 30px;
            margin-left: 15px;
            font-size: 42px;
            text-align: center;
-           display: flex;
-           justify-content: center;
-           align-items: center;}
+           @include flex-center();}
 
 .titulo {background-color: transparent;
-         font-family: 'Russo One', sans-serif;
-         color: red;
-         text-shadow: -1.6px 0 white, 0 1.6px white, 1.6px 0 white, 0 -1.6px white;
+         font-family: $title-font;
+         text-shadow: $white-text-shadow;
+         color: $red-color;
          height: 90px;
          width: 55%;
          float: left;
@@ -26,34 +82,26 @@
          font-size: 72px;
          }
 
-.user-box {background-color: red;
-           font-family: 'Teko' , sans-serif;
+.user-box {background-color: $red-color;
+           font-family: $body-font;
+           @include margin-15();
            border: 2px solid black;
            border-radius: 5px;
            font-size: 26px;
            line-height: 28px;
            height: 90px;
-           margin-top: 15px;
            float: right;
-           margin-left: 15px;
-           margin-right: 15px;
            width: 30%;
            display: flex;
            align-items: center;}
 
-.user-image-box {width: 18.5%;
+.user-image-box {@include styles-1();
+                 width: 18.5%;
                  height: 90%;
                  margin-left: 5px;
-                 background-color: rgba(255, 255, 255, 0.65);
-                 border: 1px solid white;
-                 border-radius: 5px;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;}
+                 @include flex-center();}
 
-.user-details-box {background-color: rgba(255, 255, 255, 0.65);
-                   border: 1px solid white;
-                   border-radius: 5px;
+.user-details-box {@include styles-1();
                    width: 77%;
                    height: 90%;
                    margin-left: 2%;
@@ -65,40 +113,31 @@
               margin-left: 2%;
               padding-left: 0px;}
 
-.motos-fav-btn {width: 30%;
-                height: 73%;
-                margin: 3%;
+.motos-fav-btn {@include hm-73-3();
+                width: 30%;
                 text-align: center;
                 cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;}
+                @include flex-center();}
 
-.ajustes-box {width: 8%;
-              height: 73%;
-              margin: 3%;
-              display: flex;
-              flex-direction: column;}
+.ajustes-box {@include hm-73-3();
+              width: 8%;
+              @include flex-column();}
 
 .ajuste-inf-usu {width: 100%;
                  height: 45%;
                  cursor: pointer;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;}
+                 @include flex-center();}
 
 .cerrar-ses-usu {width: 100%;
                  height: 45%;
                  margin-top: 20%;
                  cursor: pointer;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;}
+                 @include flex-center();}
 
 .btn-ini-ses {background-color: white;
               border: 2px solid black;
-              color: red;
-              font-family: 'Teko' , sans-serif;
+              color: $red-color;
+              font-family: $body-font;
               font-size: 32px;
               line-height: 32px;
               border-radius: 5px;
@@ -106,19 +145,17 @@
               height: 50%;
               text-align: center;
               cursor: pointer;
-              display: flex;
-              justify-content: center;
-              align-items: center;}
+              @include flex-center();}
 
-.btn-ini-ses:hover {background-color: red;
+.btn-ini-ses:hover {background-color: $red-color;
                     color: white;}
 
 .icon-set {transition: transform 2s;}
 
 .icon-set:hover {transform: rotate(180deg);
-                 text-shadow: -1.6px 0 red, 0 1.6px red, 1.6px 0 red, 0 -1.6px red;}
+                 text-shadow: $red-text-shadow;}
 
-.icon-exit:hover {text-shadow: -1.6px 0 red, 0 1.6px red, 1.6px 0 red, 0 -1.6px red;}
+.icon-exit:hover {text-shadow: $red-text-shadow;}
 
 .user-box-no-log {background-color: transparent;
                   height: 90px;
@@ -128,22 +165,19 @@
                   margin-right: 15px;
                   width: 30%;
                   font-size: 24px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;}
+                  @include flex-center();}
 
 .fila1-box {width: 40%;
             height: 73%;
             margin: 3%;
             margin-left: 5%;
-            display: flex;
-            flex-direction: column;}
+            @include flex-column();}
 
 .nom-usu-admin-box {width: 100%;
                     height: 48%;
                     padding-left: 5px;}
 
-.fav-motos-admin-box {background-color: red;
+.fav-motos-admin-box {background-color: $red-color;
                       width: 95%;
                       height: 48%;
                       margin-top: 4%;
@@ -155,9 +189,7 @@
                       text-align: center;
                       cursor: pointer;
                       transition: width 0.5s;
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;}
+                      @include flex-center();}
 
 .fav-motos-admin-box:hover {width: 100%;}
 
@@ -199,9 +231,7 @@
                  justify-content: center;
                  flex-direction: column;}
 
-.icon {display: flex;
-       justify-content: center;
-       align-items: center;}
+.icon {@include flex-center();}
     
 .btn-modal {background-color: white;
             border: 2px solid grey;
@@ -212,14 +242,12 @@
 .modal-botones {background-color: transparent;
                 width: 80%;
                 height: 30%;
-                display: flex;
-                justify-content: center;
-                align-items: center;}
+                @include flex-center();}
 
 .modal-1 {background-color: lightgrey;
           border: 2px solid black;
-          color: red;
-          font-family: 'Teko' , sans-serif;
+          color: $red-color;
+          font-family: $body-font;
           line-height: 18px;
           font-size: 23px;
           border-radius: 10px;
@@ -231,10 +259,7 @@
           top: 160px;
           left: 36.1%;
           overflow: visible;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;}
+          @include flex-center-column();}
                  
 
 @media screen and (max-width: 1180px) {
@@ -245,11 +270,9 @@
        .fav-motos-admin-box {font-size: 15px;
                              line-height: 13px;}
 
-       .motos-adm-btn {line-height: 10px;
-                       font-size: 13px;}
+       .motos-adm-btn {@include admin-btn-mq-nv1();}
                    
-       .usu-adm-btn {line-height: 10px;
-                     font-size: 13px;}
+       .usu-adm-btn {@include admin-btn-mq-nv1();}
 
        .btn-ini-ses {font-size: 18px;
                      line-height: 19px;}
@@ -265,11 +288,9 @@
        .fav-motos-admin-box {font-size: 13px;
                              line-height: 11px;}
 
-       .motos-adm-btn {line-height: 9px;
-                       font-size: 11px;}
+       .motos-adm-btn {@include admin-btn-mq-nv2();}
                    
-       .usu-adm-btn {line-height: 9px;
-                     font-size: 11px;}
+       .usu-adm-btn {@include admin-btn-mq-nv2();}
 
        .btn-ini-ses {font-size: 15px;
                      line-height: 12px;}
@@ -297,11 +318,9 @@
        .fav-motos-admin-box {font-size: 11px;
                              line-height: 11px;}
 
-       .motos-adm-btn {line-height: 9px;
-                       font-size: 10px;}
+       .motos-adm-btn {@include admin-btn-mq-nv3();}
            
-       .usu-adm-btn {line-height: 9px;
-                     font-size: 10px;}
+       .usu-adm-btn {@include admin-btn-mq-nv3();}
 
        .btn-ini-ses {font-size: 14px;
                      line-height: 15px;}
