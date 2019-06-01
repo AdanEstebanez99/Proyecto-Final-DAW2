@@ -16,6 +16,7 @@ export class InicioComponent {
 
   usuario: string;
   contrasena: string;
+  contraAUX: string;
 
   constructor(private apiService: ApiService,
               private loginService: LoginService,
@@ -29,20 +30,17 @@ export class InicioComponent {
 
     let password: string | Int32Array;
     password = md5.appendStr(this.contrasena).end();
+    this.contraAUX = password.toString();
 
-    this.contrasena = password.toString();
-
-    this.apiService.getInicioUsuario(this.usuario, this.contrasena).subscribe(
+    this.apiService.getInicioUsuario(this.usuario, this.contraAUX).subscribe(
       res => {
-
+        this.contrasena = '';
         // COMPROBAMOS SI LA RESPUESTA ESTA VACIA (INICIO INCORRECTO)
         // O SI LA RESPUESTA VIENE CON DATOS (INICIO DE SESION CORRECTO)
         if (res != null) {
-          console.log('Inicio de sesion CORRECTO');
           this.loginService.setUsuarioLog(res);
           this.router.navigate(['/contenido']);
         } else {
-          console.log('Inicio de sesion INCORRECTO');
           this.contrasena = '';
           this.modal = true;
         }

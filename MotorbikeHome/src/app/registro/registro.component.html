@@ -49,7 +49,7 @@
           <br>
           <label class="campo">Contraseña:</label>
           <br>
-          <input type="password" class="input-form" name="con_usu" required maxlength="25" minlength="5" placeholder="Introduce una contraseña"[(ngModel)]="model.con_usu" #con_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && con_usu.invalid }" autocomplete="off">  
+          <input type="password" class="input-form" name="con_usu" required maxlength="25" minlength="5" placeholder="Introduce una contraseña"[(ngModel)]="contrasena" #con_usu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && con_usu.invalid }" autocomplete="off">  
           <br>
           <div *ngIf="f.submitted && con_usu.invalid">
             <div class="validacion" *ngIf="con_usu.errors?.required">Este campo es obligatorio</div>

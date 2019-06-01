@@ -15,6 +15,8 @@ export class RegistroComponent implements OnInit {
 
   modalCorrecto: boolean;
 
+  contrasena: string;
+
   model: RegistroViewModel = {
     nick_usu: '',
     nom_usu: '',
@@ -38,7 +40,7 @@ export class RegistroComponent implements OnInit {
     const md5 = new Md5();
 
     let password: string | Int32Array;
-    password = md5.appendStr(this.model.con_usu).end();
+    password = md5.appendStr(this.contrasena).end();
 
     this.model.con_usu = password.toString();
 
@@ -46,7 +48,7 @@ export class RegistroComponent implements OnInit {
 
     this.apiService.registerUser(this.model).subscribe(
       res => {
-
+        this.contrasena = '';
         if ((res === null) || (res === '')) {
           this.modal = true;
         } else {
