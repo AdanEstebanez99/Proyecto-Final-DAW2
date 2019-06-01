@@ -14,6 +14,9 @@ export class AjustesUsuarioComponent implements OnInit {
   usuarioLog: Usuario;
   infoUsu: Usuario;
 
+  apellido: string;
+  nombre: string;
+
   modalNo: boolean;
 
   constructor(private apiService: ApiService,
@@ -23,21 +26,27 @@ export class AjustesUsuarioComponent implements OnInit {
     this.modalNo = false;
     this.usuarioLog = this.loginService.getUsuarioLog();
     this.infoUsu = this.usuarioLog;
+    this.apellido = this.infoUsu.ape_usu;
+    this.nombre = this.infoUsu.nom_usu;
   }
 
     // FUNCION PARA ACTUALIZAR LOS DATOS DEL USUARIO
-    public actualizarUsu(updateUsuario: Usuario) {
+    public actualizarUsu() {
 
-      if ((updateUsuario.ape_usu === '') || (updateUsuario.nom_usu === '')) {
+      if ((this.nombre === '') || (this.apellido === '')) {
+        this.apellido = this.usuarioLog.ape_usu;
+        this.nombre = this.usuarioLog.nom_usu;
         this.modalNo = true;
-        this.usuarioLog = this.loginService.getUsuarioLog();
-        this.infoUsu = this.loginService.getUsuarioLog();
       } else {
 
-        this.apiService.updateUsuById(updateUsuario).subscribe(
+        this.infoUsu.nom_usu = this.nombre;
+        this.infoUsu.ape_usu = this.apellido;
+
+        this.apiService.updateUsuById(this.infoUsu).subscribe(
           res => {
+            this.loginService.setUsuarioLog(this.infoUsu);
             this.usuarioLog = this.loginService.getUsuarioLog();
-            this.infoUsu = this.loginService.getUsuarioLog();
+            this.infoUsu = this.usuarioLog;
           },
           err => {
             alert('Ha ocurrido un error al conectar con la API');
@@ -73,7 +82,7 @@ export class AjustesUsuarioComponent implements OnInit {
 
         if (reader.result.toString().includes('image')) {
           this.infoUsu.img_usu = reader.result.toString();
-          this.actualizarUsu(this.infoUsu);
+          this.actualizarUsu();
         }
 
         console.log(reader.result);
