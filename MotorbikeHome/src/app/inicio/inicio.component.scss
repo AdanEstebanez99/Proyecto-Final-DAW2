@@ -115,7 +115,9 @@ $full-white-text-shadow: -1.5px 0 6px white, 0 1.5px 6px white, 1.5px 0 6px whit
                justify-content: center;}
 
 .titulo {background-color: $title-back-color;
-         @include common-style-1();
+         border-radius: 9px 9px 0px 0px;
+         border: 1px solid rgb(250, 242, 242);
+         width: 100%;
          text-shadow: $full-white-text-shadow;
          font-family: 'Russo One', sans-serif;
          height: 125px;
