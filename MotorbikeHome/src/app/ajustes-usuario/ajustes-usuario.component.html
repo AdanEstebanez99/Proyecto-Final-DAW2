@@ -19,8 +19,9 @@
        
       <div class="table">
         <div class="cabecera">
-            <div class="img-usu">
-                <i class="material-icons" style="font-size: 100px; padding: 7px;">person</i>
+            <div class="img-usu" >
+              <i *ngIf="!infoUsu.img_usu" class="material-icons" style="font-size: 100px; padding: 7px;">person</i>
+              <img *ngIf="infoUsu.img_usu" id="imageUsu" #divImage [src]="infoUsu.img_usu">
             </div>
             <div class="nick-usu">
               <h1>{{infoUsu.nick_usu}}</h1>
@@ -39,7 +40,8 @@
             <div class="email-usu">
               <h5>{{usuarioLog.cor_usu}}</h5>
             </div>
-            <div class="color-fav-usu">
+            <div class="col-fav-usu">
+              <input id="file" #file (change)="obtenerImagen(file)" type="file"/>
             </div>
           </div>
         </div>

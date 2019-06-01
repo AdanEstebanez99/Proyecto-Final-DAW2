@@ -53,4 +53,34 @@ export class AjustesUsuarioComponent implements OnInit {
       this.modalNo = false;
     }
 
+    // FUNCION PARA LA IMAGEN DEL USUARIO
+    public obtenerImagen(file) {
+      let files = file.files;
+      if (files.length > 0) {
+        if (file.files[0].type.includes('image')) {
+          this.getBase64(files[0]);
+        } else {
+          alert('Debes seleccionar una imagen');
+        }
+      }
+    }
+
+    // FUNCION PARA CONVERTIR A BASE64 UNA IMAGEN
+    public getBase64(file) {
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+
+        if (reader.result.toString().includes('image')) {
+          this.infoUsu.img_usu = reader.result.toString();
+          this.actualizarUsu(this.infoUsu);
+        }
+
+        console.log(reader.result);
+      };
+      reader.onerror = (error) => {
+        console.log('Error: ', error);
+      };
+    }
+
 }

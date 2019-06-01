@@ -64,11 +64,18 @@
       <br>
       <div class="comentarios">
         <div class="comentarios-scroll">
-  
-  
           <div *ngFor="let comentario of comentarios" class="detalle-comentario">
             <div class="inf-usu">
-              <div class="logo-usu"><i class="material-icons" style="font-size: 61px; padding: 2px;">person</i></div>
+
+              <div *ngFor="let usuario of usuComent">
+                <div *ngIf="usuario.id_usu === comentario.id_usu">
+                  <div class="logo-usu">
+                    <i *ngIf="!usuario.img_usu" class="material-icons" style="font-size: 61px; padding: 2px;">person</i>
+                    <img *ngIf="usuario.img_usu" id="imageUsu" #divImage [src]="usuario.img_usu">
+                  </div>
+                </div>
+              </div>
+              
               <div *ngFor="let usuario of usuComent">
                 <div class="nick-usu" *ngIf="usuario.id_usu === comentario.id_usu ">{{usuario.nick_usu}}</div>
               </div>

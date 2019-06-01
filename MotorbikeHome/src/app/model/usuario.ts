@@ -7,4 +7,5 @@ export interface Usuario {
     cor_usu: string;
     col_usu: string;
     rol_usu: number;
+    img_usu: string;
 }

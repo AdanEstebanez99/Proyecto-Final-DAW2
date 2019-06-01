@@ -32,7 +32,10 @@
               </i>
             </th>
             <th class="campo">{{usuario.id_usu}}</th>
-            <td class="campo"><i class="material-icons" style="font-size: 42px; padding: 2px;">person</i></td>
+            <td class="campo">
+              <i *ngIf="!usuario.img_usu"class="material-icons" style="font-size: 42px; padding: 2px;">person</i>
+              <img *ngIf="usuario.img_usu" id="imageUsu" #divImage [src]="usuario.img_usu">
+            </td>
             <td class="campo">{{usuario.nick_usu}}</td>
             <td class="campo">{{usuario.nom_usu}}</td>
             <td class="campo">{{usuario.ape_usu}}</td>

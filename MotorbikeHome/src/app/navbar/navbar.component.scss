@@ -101,6 +101,8 @@ $white-text-shadow: -1.6px 0 white, 0 1.6px white, 1.6px 0 white, 0 -1.6px white
                  margin-left: 5px;
                  @include flex-center();}
 
+#imageUsu {width: 100%;}
+
 .user-details-box {@include styles-1();
                    width: 77%;
                    height: 90%;

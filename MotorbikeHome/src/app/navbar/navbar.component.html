@@ -3,7 +3,10 @@
   <div class="titulo">Motorbike Home </div>
   
   <div *ngIf="menu === 'usuario'" class="user-box">
-    <div class="user-image-box"> <i class="material-icons" style="font-size: 56px; padding: 2px;">person</i> </div>
+    <div class="user-image-box"> 
+      <i *ngIf="!usuarioLog.img_usu" class="material-icons" style="font-size: 56px; padding: 2px;">person</i>
+      <img *ngIf="usuarioLog.img_usu" id="imageUsu" #divImage [src]="usuarioLog.img_usu">
+    </div>
     <div class="user-details-box">
       <div class="nom-usu-box"> {{usuarioLog.nick_usu}} </div>
       <div *ngIf="viewAdmin === false" class="fav-motos-admin-box" routerLink="/favoritas"> Motos Favoritas </div>
@@ -24,7 +27,10 @@
   </div>
 
   <div *ngIf="menu === 'admin'" class="user-box">
-    <div class="user-image-box"> <i class="material-icons" style="font-size: 56px; padding: 2px;">person</i> </div>
+    <div class="user-image-box">
+        <i *ngIf="!usuarioLog.img_usu" class="material-icons" style="font-size: 56px; padding: 2px;">person</i>
+        <img *ngIf="usuarioLog.img_usu" id="imageUsu" #divImage [src]="usuarioLog.img_usu">
+    </div>
     <div class="user-details-box">
       <div class="fila1-box">
         <div class="nom-usu-admin-box"> {{usuarioLog.nick_usu}} </div>
