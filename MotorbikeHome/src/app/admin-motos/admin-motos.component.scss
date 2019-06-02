@@ -1,55 +1,70 @@
+$body-text: 'Teko' , sans-serif;
+$shadow-text: -1.6px 0 5px white, 0 1.6px 5px white, 1.6px 0 5px white, 0 -1.6px 5px white;
+$border-rad-5-0: 5px 0px 5px 5px;
+$border-4-black: 4px solid black;
+
+@mixin flex-center() {
+        display: flex;
+        justify-content: center;
+}
+
+@mixin flex-center-center() {
+        @include flex-center();
+        align-items: center;
+}
+
+@mixin wh-90() {
+        width: 90px;
+        height: 90px;
+}
+
 .banner {background-image: url(../../assets/imagenes/background-general.jpg);
-        background-size: cover;
-        background-position: center;
-        border: 2px solid black;}
+         background-size: cover;
+         background-position: center;
+         border: 2px solid black;}
 
 .fondo-motos {background-color: rgba(128, 128, 128, 0.85);
               border-radius: 20px;
               width: 100%;
               height: 100%;
-              display: flex;
+              @include flex-center();
               flex-wrap: wrap;
               align-items: flex-start;
-              flex-direction: row;
-              justify-content: center;}
+              flex-direction: row;}
 
 .fondo {width: 100%;
         height: 1200px;
         background-color: white;
         background-image: url(../../assets/imagenes/background-fondo.jpg);
         background-position: center;
-        font-family: 'Teko' , sans-serif;
-        display: flex;
-        justify-content: center;}
+        font-family: $body-text;
+        @include flex-center();}
    
 .pagina {width: 90%;
          height: 97%;
          margin-top: 15px;
          background-color: transparent;
-         display: flex;
-         flex-direction: column;
-         align-items: center;}
+         @include flex-center-center();}
 
 .titulo {padding: 15px;
-         text-shadow: -1.6px 0 5px white, 0 1.6px 5px white, 1.6px 0 5px white, 0 -1.6px 5px white;}
+         text-shadow: $shadow-text;}
 
 .contenido {background-color: white;
             height: 80%;
             width: 95%;
             border: 2px solid white;
-            border-radius: 5px 0px 5px 5px;
-            display: flex;
-            justify-content: center;
+            border-radius: $border-rad-5-0;
+            @include flex-center();
             overflow: scroll;}
 
-.moto-table {border: 4px solid black;
+.moto-table {border: $border-4-black;
              background-color: white;
-             border-radius: 5px 0px 5px 5px;
+             border-radius: $border-rad-5-0;
              font-size: 17px;
              line-height: 18px;}
 
 .campo {background-color: white;
-        border: 4px solid black;
+        border: $border-4-black;
         border-radius: 2px;
         text-align: center;
         padding: 5px;}
@@ -65,15 +80,12 @@
      
 .back-box {background-color: transparent;
            position: absolute;
-           width: 90px;
-           height: 90px;
+           @include wh-90();
            margin-top: -90px;
            margin-left: 15px;
            font-size: 42px;
            text-align: center;
-           display: flex;
-           justify-content: center;
-           align-items: center;}
+           @include flex-center-center();}
              
 .back-icon {background-color: white;
             border: 2px solid red;
@@ -105,16 +117,13 @@
 .modal-botones {background-color: transparent;
                 width: 80%;
                 height: 30%;
-                display: flex;
-                justify-content: center;
-                align-items: center;}
+                @include flex-center-center();}
     
 .modal-1 {background-color: lightgrey;
           border: 2px solid black;
           color: red;
-          font-family: 'Teko' , sans-serif;
+          font-family: $body-text;
           line-height: 18px;
-          font-size: 23px;
           border-radius: 10px;
           position: absolute;
           width: 420px;
@@ -124,7 +133,5 @@
           top: 160px;
           left: 36.1%;
           overflow: visible;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include flex-center-center();
           flex-direction: column;}
