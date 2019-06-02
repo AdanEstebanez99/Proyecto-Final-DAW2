@@ -77,14 +77,14 @@
                  justify-content: center;}
 
 /deep/ .ngx-pagination .current {background: red !important;
-                                 color: white;
+                                 color: black;
                                  font-weight: bold;
                                  border-radius: 5px;}
 
-/deep/ .ngx-pagination a {color: white;}
+/deep/ .ngx-pagination a {color: black;}
 
 /deep/ .ngx-pagination a:hover {font-weight: bold;
-                                border: 2px solid white;
+                                border: 2px solid grey;
                                 border-radius: 5px;
                                 line-height: 18px;
                                 text-decoration: none;}
