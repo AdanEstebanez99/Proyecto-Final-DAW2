@@ -41,11 +41,11 @@
               <i class="material-icons papelera" (click)="modalEliminar(moto.id_mot)" style="font-size: 32px;">
               delete_forever
               </i></th>
-            <th class="campo">{{moto.id_mot}}</th>
+            <th class="campo" style="background-color: rgb(240, 240, 240)">{{moto.id_mot}}</th>
             <td class="campo"><img class="imagen" src="{{moto.img_mot}}"></td>
-            <td class="campo"><span *ngFor="let marca of marcas"><i *ngIf="marca.id_mar === moto.id_mar">{{marca.nom_mar}}</i></span></td>
-            <td class="campo"><span *ngFor="let modalidad of modalidades"><i *ngIf="modalidad.id_mod === moto.id_mod">{{modalidad.nom_mod}}</i></span></td>
-            <td class="campo">{{moto.nom_mot}}</td>
+            <td class="campo" style="background-color: rgb(240, 240, 240)"><span *ngFor="let marca of marcas"><i *ngIf="marca.id_mar === moto.id_mar">{{marca.nom_mar}}</i></span></td>
+            <td class="campo" style="background-color: rgb(240, 240, 240)"><span *ngFor="let modalidad of modalidades"><i *ngIf="modalidad.id_mod === moto.id_mod">{{modalidad.nom_mod}}</i></span></td>
+            <td class="campo" style="background-color: rgb(240, 240, 240)">{{moto.nom_mot}}</td>
             <td class="campo"><input [(ngModel)]="moto.cil_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
             <td class="campo"><input [(ngModel)]="moto.cic_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>
             <td class="campo"><input [(ngModel)]="moto.ref_mot" (change)="actualizarMoto(moto)" type="text" class="input-label"/></td>

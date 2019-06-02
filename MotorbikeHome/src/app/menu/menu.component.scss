@@ -1,23 +1,47 @@
+$body-text: 'Teko' , sans-serif;
+$red-border: 2px solid red;
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-center-center() {
+    @include flex-center();
+    align-items: center;
+}
+
+@mixin flex-initial() {
+    display: flex;
+    justify-content: initial;
+    flex-direction: column;
+    align-content: center;
+}
+
+@mixin wh-90() {
+    width: 90px;
+    height: 90px;
+}
+
 .menu-icon {background: white;
             border-radius: 5px;
             color: inherit;
-            border: 2px solid red;
+            border: $red-border;
             cursor: pointer;
             position: absolute;
             width: 65px;
             padding-left: 5px;
             height: 70px;
-            display: flex;
-            justify-content: center;}
+            @include flex-center();}
 
 .dropdown-content {opacity: 0;
                    display: none;
                    background-color: white;
-                   border: 2px solid red;
+                   border: $red-border;
                    border-radius: 10px;
                    position: relative;
                    background-color: #f1f1f1;
-                   font-family: 'Teko' , sans-serif;
+                   font-family: $body-text;
                    font-size: 22px;
                    margin-left: 110px;
                    margin-top: 315px;
@@ -32,37 +56,30 @@
 
 .filter-title {background-color: red;
                border-radius: 3px 3px 0px 0px;
-               border: 2px solid red;
+               border: $red-border;
                text-align: left;
                font-size: 28px;
                padding: 10px;}
 
 .menu-box {position: absolute;
-           width: 90px;
-           height: 90px;
+           @include wh-90();
            margin-top: -95px;
            margin-left: 15px;
            font-size: 42px;
            text-align: center;
-           display: flex;
-           justify-content: center;
-           align-items: center;}
+           @include flex-center-center();}
 
 .filtro {padding: 10px;}
 
 .filter-select {padding-top: 10px;
-                display: flex;
-                justify-content: initial;
-                flex-direction: column;
-                align-content: center;}
+                @include flex-initial();}
 
 .menu-box:hover .dropdown-content {display: block;
                                    opacity: 1;
                                    -webkit-animation: fadeIn 1s;
                                    animation: fadeIn 1s;
                                    background-color: white;
-                                   border: 2px solid red;}
-
+                                   border: $red-border;}
 
 @-webkit-keyframes fadeIn {
     from { opacity: 0; }
