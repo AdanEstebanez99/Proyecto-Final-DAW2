@@ -85,7 +85,7 @@ public class UsuarioController {
 	}
 	
 	
-	//PARA OBTENER UN USUARIO POR NICK Y CONTRASEÑA
+	//PARA OBTENER UN USUARIO POR NICK Y CONTRASEï¿½A
 	@CrossOrigin
 	@PostMapping("/usuarios/login")
 	public Usuario loginUsuario(@Valid @RequestBody Map<String, Object> datos) {
@@ -148,6 +148,7 @@ public class UsuarioController {
 		usu.setCor_usu(usuDetails.getCor_usu());
 		usu.setCol_usu(usuDetails.getCol_usu());
 		usu.setRol_usu(usuDetails.getRol_usu());
+		usu.setImg_usu(usuDetails.getImg_usu());
 		
 		Usuario updateUsuario=usuarioDAO.save(usu);
 		

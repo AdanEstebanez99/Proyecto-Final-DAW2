@@ -44,6 +44,8 @@ public class Usuario {
 	
 	private int rol_usu;
 	
+	private String img_usu;
+	
 	
 	//GETTERS AND SETTERS
 	public long getId_usu() {
@@ -108,6 +110,16 @@ public class Usuario {
 	public void setRol_usu(int rol_usu) {
 		this.rol_usu = rol_usu;
 	}
+
+	public String getImg_usu() {
+		return img_usu;
+	}
+
+	public void setImg_usu(String img_usu) {
+		this.img_usu = img_usu;
+	}
+	
+	
 	
 }
 
